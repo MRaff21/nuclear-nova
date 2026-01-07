@@ -10,12 +10,19 @@ const { title } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body>
+
     <Nav />
-    
-    <main>
+    <script type="module">
+      const status = sessionStorage.getItem('acceptedTerms');
+      const isTermsPage = window.location.pathname === '/terms';
+
+      if (status !== 'true' && status !== 'declined' && !isTermsPage) {
+        window.location.href = '/terms';
+      }
+      
+    </script>
       <slot />
     </main>
     <Lightbox />
