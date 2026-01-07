@@ -1,0 +1,77 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About Us</title>
+  </head>
+  <body class="bg-base-100 text-base-content">
+    <!-- Hero Section -->
+    <section class="bg-primary text-primary-content py-20 px-4 text-center">
+      <h1 class="text-5xl font-extrabold mb-4">Welcome to Nuclear Nova</h1>
+      <p class="text-xl max-w-2xl mx-auto">
+        We create stunning web experiences powered by Astro, Tailwind, and DaisyUI.
+      </p>
+      <div class="mt-8">
+        <a href="/" class="btn btn-secondary btn-lg">Explore Our Work</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 px-4">
+      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-bold mb-4">Our Mission</h2>
+          <p class="mb-4">
+            We aim to simplify the web for everyone. Our team focuses on clean,
+            responsive designs that delight users and help projects stand out.
+          </p>
+          <p>
+            From interactive galleries to fully dynamic websites, we combine
+            modern tooling with thoughtful design principles.
+          </p>
+        </div>
+        <div>
+          <img
+            src="../images/about-hero.png"
+            alt="Team collaborating"
+            class="rounded-xl shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-base-200 py-20 px-4">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-12">What We Offer</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="card bg-base-100 shadow-xl p-6">
+            <h3 class="text-xl font-bold mb-2">Custom Web Development</h3>
+            <p>Create fast, modern, and responsive sites tailored to your vision.</p>
+          </div>
+          <div class="card bg-base-100 shadow-xl p-6">
+            <h3 class="text-xl font-bold mb-2">UI/UX Design</h3>
+            <p>Beautiful interfaces that are intuitive and enjoyable for users.</p>
+          </div>
+          <div class="card bg-base-100 shadow-xl p-6">
+            <h3 class="text-xl font-bold mb-2">Photography & Media</h3>
+            <p>High-quality media assets integrated seamlessly into your site.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-4 text-center">
+      <h2 class="text-4xl font-bold mb-6">Ready to get started?</h2>
+      <p class="mb-8 max-w-xl mx-auto">
+        Whether it's a full site or just a component, we’re here to make your
+        project shine.
+      </p>
+      <a href="/contact" class="btn btn-primary btn-lg">Contact Us</a>
+    </section>
+  </body>
+</html>
