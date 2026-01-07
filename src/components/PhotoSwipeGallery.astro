@@ -1,0 +1,50 @@
+---
+const images = Astro.props.images || [];
+---
+
+<div class="my-gallery">
+  {images.map(image => (
+    <a href={image.src} 
+       data-pswp-width={image.width} 
+       data-pswp-height={image.height} 
+       data-pswp-caption={image.alt}
+       target="_blank">
+      <img src={image.src} alt={image.alt} />
+    </a>
+  ))}
+</div>
+
+<script type="module">
+  import PhotoSwipeLightbox from '../node_modules/photoswipe/dist/photoswipe-lightbox.esm.js';
+  import '../node_modules/photoswipe/dist/photoswipe.css';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '.my-gallery',   
+    children: 'a',
+    pswpModule: () => import('../node_modules/photoswipe/dist/photoswipe.esm.js')
+  });
+
+  lightbox.init();
+</script>
+
+<style>
+/* Grid gallery layout */
+.my-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+/* Thumbnail images */
+.my-gallery img {
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.my-gallery img:hover {
+  transform: scale(1.03);
+}
+</style>

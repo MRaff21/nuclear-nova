@@ -1,0 +1,38 @@
+---
+import Nav from "../components/Nav.astro";
+import Lightbox from '../components/Lightbox.astro';
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body>
+    <Nav />
+    
+    <main>
+      <slot />
+    </main>
+    <Lightbox />
+  </body>
+</html>
+
+
+<style>
+  body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background: #fafafa;
+  }
+
+  main {
+    max-width: 900px;
+    margin: auto;
+  }
+</style>

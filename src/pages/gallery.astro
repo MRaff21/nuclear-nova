@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PhotoSwipeGallery from "../components/PhotoSwipeGallery.astro";
+
+
+const images = [
+  { src: 'src/images/photo-1.png', width: 1200, height: 800, alt: 'Photo 1' },
+  { src: 'src/images/photo-2.png', width: 1200, height: 800, alt: 'Photo 2' },
+  { src: 'src/images/photo-3.png', width: 1200, height: 800, alt: 'Photo 3' },
+  // Add more
+];
+---
+
+<BaseLayout title="Gallery">
+  <h1>Gallery</h1>
+  <PhotoSwipeGallery images={images} />
+</BaseLayout>
+
