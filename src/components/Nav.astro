@@ -1,34 +1,17 @@
-<nav>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/gallery">Gallery</a></li>
-    <li><a href="/about">About</a></li>
-  </ul>
+<nav class="navbar bg-base-100/80 backdrop-blur border-b border-base-300 sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto w-full px-6">
+    <div class="flex-1">
+      <a href="/" class="text-xl font-extrabold tracking-tight text-primary">
+        Nuclear Nova
+      </a>
+    </div>
+
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1 gap-1 text-base font-semibold">
+        <li><a href="/" class="font-medium">Home</a></li>
+        <li><a href="/gallery" class="font-medium">Gallery</a></li>
+        <li><a href="/about" class="font-medium">About</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
-
-<style>
-  nav {
-    padding-bottom: 1rem;
-    boarder-bottom: 2px solid #32bbbb;
-    margin-bottom: 2rem;
-
-  }
-
-  ul {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #ffffff;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-</style>

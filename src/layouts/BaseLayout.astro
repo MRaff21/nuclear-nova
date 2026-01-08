@@ -1,12 +1,10 @@
 ---
 import Nav from "../components/Nav.astro";
-import Lightbox from '../components/Lightbox.astro';
 import "../styles/global.css";
-
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -14,33 +12,31 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
+  <body>
     <Nav />
-    <script type="module">
-      const status = sessionStorage.getItem('acceptedTerms');
-      const isTermsPage = window.location.pathname === '/terms';
 
-      if (status !== 'true' && status !== 'declined' && !isTermsPage) {
-        window.location.href = '/terms';
-      }
-      
-    </script>
+    <main>
       <slot />
     </main>
-    <Lightbox />
+
+    <script type="module">
+      const els = document.querySelectorAll("[data-reveal]");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reduceMotion) {
+        els.forEach(el => el.classList.add("reveal-show"));
+      } else {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("reveal-show");
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        els.forEach((el) => io.observe(el));
+      }
+    </script>
   </body>
 </html>
-
-
-<style>
-  body {
-    font-family: system-ui, sans-serif;
-    margin: 0;
-    padding: 2rem;
-    background: #fafafa;
-  }
-
-  main {
-    max-width: 900px;
-    margin: auto;
-  }
-</style>

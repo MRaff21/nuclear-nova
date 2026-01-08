@@ -1,21 +1,157 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<BaseLayout title="Home">
-  
-    <div class="text-3xl font-bold text-blue-600 p-4">
-      Tailwind + DaisyUI loaded!
-    </div>  
+<BaseLayout title="Nuclear Nova">
+  <main class="min-h-screen">
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-base-200">
+      <div 
+        class="absolute inset-0 bg-cover bg-center opacity-30"
+        style="background-image: url('/images/hero-bg.png');"
+        
+      ></div>
 
-    <button class="btn btn-primary">Click me</button>
+      <!-- Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/20"></div>
 
-    
-    <button class="btn w-64 rounded-full">Button</button>
+      <!-- Content -->
+      <div class="relative z-10">
+        <div class="max-w-6xl mx-auto px-6 py-28 grid lg:grid-cols-2 gap-12 items-center text-white">
+          <div data-reveal>
+            <p class="uppercase tracking-widest text-sm opacity-80">Developer Studio</p>
 
+            <h1 class="text-5xl font-extrabold leading-tight mt-3">
+              Build a site that feels alive.
+            </h1>
+
+            <p class="mt-6 text-lg opacity-90">
+              A place to design and develop websites with the time to practice my craft.
+            </p>
+
+            <div class="mt-8 flex gap-3">
+              <a class="btn btn-primary">View Gallery</a>
+              <a class="btn btn-ghost btn-outline text-white">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card Feature -->
+
+<section id="card" class="bg-base-100">
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="card bg-base-200 shadow-xl" data-reveal>
+      <div class="card-body">
+        <h2 class="card-title">What you get</h2>
+        <ul class="mt-2 space-y-2 opacity-100">
+          <li>• Static-first performance</li>
+          <li>• PhotoSwipe gallery</li>
+          <li>• Tailwind + DaisyUI styling</li>
+          <li>• Smooth reveal-on-scroll</li>
+        </ul>
+        <div class="card-actions mt-6">
+          <a class="btn btn-secondary" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
+
+
+
+
+    <!-- Features 
+    <section id="features" class="bg-base-100">
+      <div class="max-w-6xl mx-auto px-6 py-20">
+        <div class="text-center max-w-2xl mx-auto" data-reveal>
+          <h2 class="text-4xl font-bold">Features</h2>
+          <p class="mt-4 opacity-80">
+            A clean, modern layout with sections that you can swap out as your ideas evolve.
+          </p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+          <div class="card bg-base-200" data-reveal>
+            <div class="card-body">
+              <h3 class="card-title">Fast</h3>
+              <p class="opacity-80">Static pages served via CDN. Minimal JS by default.</p>
+            </div>
+          </div>
+
+          <div class="card bg-base-200" data-reveal>
+            <div class="card-body">
+              <h3 class="card-title">Polished</h3>
+              <p class="opacity-80">DaisyUI components give you nice defaults instantly.</p>
+            </div>
+          </div>
+
+          <div class="card bg-base-200" data-reveal>
+            <div class="card-body">
+              <h3 class="card-title">Flexible</h3>
+              <p class="opacity-80">Swap sections, add galleries, integrate booking tools.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Content Block 
+    <section class="bg-base-200">
+      <div class="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+        <div data-reveal>
+          <h2 class="text-4xl font-bold">A layout you can grow.</h2>
+          <p class="mt-4 opacity-80">
+            Start with a strong landing page, then add booking, portfolios, and content later.
+          </p>
+          <div class="mt-8 flex gap-3">
+            <a class="btn btn-primary" href="/about">About</a>
+            <a class="btn btn-outline" href="/gallery">Gallery</a>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl" data-reveal>
+          <div class="card-body">
+            <h3 class="card-title">Example section</h3>
+            <p class="opacity-80">
+              Drop your own images, testimonials, or service list here.
+            </p>
+            <div class="divider"></div>
+            <p class="text-sm opacity-70">
+              This is intentionally simple—so you can iterate quickly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA 
+    <section id="contact" class="bg-base-100">
+      <div class="max-w-6xl mx-auto px-6 py-20 text-center">
+        <div data-reveal>
+          <h2 class="text-4xl font-bold">Ready to build?</h2>
+          <p class="mt-4 opacity-80 max-w-2xl mx-auto">
+            Next step: swap in real copy + imagery. Then we refine spacing and motion.
+          </p>
+          <div class="mt-8 flex justify-center gap-3">
+            <a class="btn btn-primary" href="mailto:you@example.com">Email</a>
+            <a class="btn btn-ghost" href="/gallery">See work</a>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="bg-base-200">
+      <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row gap-4 justify-between items-center">
+        <p class="opacity-70">© {new Date().getFullYear()} Nuclear Nova</p>
+        <div class="flex gap-4">
+          <a class="link link-hover" href="/about">About</a>
+          <a class="link link-hover" href="/gallery">Gallery</a>
+          <a class="link link-hover" href="#contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </main>
 </BaseLayout>
